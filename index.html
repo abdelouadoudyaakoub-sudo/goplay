@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jenga — 2850 دج</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@600;700;800&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- ===== Facebook Pixel ===== -->
+<!-- بدل PIXEL_ID_HERE برقم البيكسل تاعك من Meta Events Manager -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1113476081438524');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1113476081438524&ev=PageView&noscript=1"
+/></noscript>
+<!-- ===== End Facebook Pixel ===== -->
+<style>
+  :root{
+    --forest:#12503B;
+    --forest-deep:#0A2E22;
+    --gold:#F2B705;
+    --gold-deep:#C79000;
+    --red:#E2401D;
+    --black:#14110F;
+    --cream:#FBF1E3;
+    --paper:#F3E6D2;
+    --ink:#241019;
+    --wood:#B98A56;
+    --green:#25D366;
+    --green-deep:#0c3320;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Tajawal', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Changa', sans-serif;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+
+  /* ---------- POSTER ---------- */
+  .poster img{width:100%; display:block;}
+
+  /* ---------- ORDER FORM ---------- */
+  .order-section{padding:44px 20px 56px; background:var(--paper);}
+  .section-head{max-width:560px; margin:0 auto 26px; text-align:center;}
+  .section-head h2{font-size:clamp(24px,5vw,30px); font-weight:700; color:var(--forest-deep);}
+  .section-head p{margin-top:8px; color:#5a4d44; font-size:15px;}
+
+  .order-box{
+    max-width:560px; margin:0 auto; background:#fff; border-radius:20px;
+    box-shadow:0 20px 50px rgba(20,17,15,.18); overflow:hidden;
+    border:2px solid var(--gold);
+  }
+  .order-box-head{background:linear-gradient(120deg, var(--forest), var(--forest-deep)); color:#fff; padding:22px 26px;}
+  .order-box-head h3{font-size:20px; font-weight:800;}
+  .order-box-head p{font-size:13.5px; margin-top:3px; color:rgba(255,255,255,.9);}
+  .order-form{padding:24px 26px 28px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:14px; font-weight:700; margin-bottom:6px;}
+  .field input[type="text"], .field input[type="tel"], .field select{
+    width:100%; padding:13px 16px; border-radius:12px; border:1.5px solid #e2d6c6;
+    background:var(--cream); font-family:'Tajawal'; font-size:15.5px; color:var(--ink);
+  }
+  .field input:focus, .field select:focus{outline:none; border-color:var(--forest);}
+  .delivery-options{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .delivery-card{
+    border:1.5px solid #e2d6c6; border-radius:12px; padding:13px; cursor:pointer;
+    background:var(--cream); text-align:center; display:block;
+  }
+  .delivery-card input{display:none;}
+  .delivery-card.active{border-color:var(--forest); background:#e8f2ec;}
+  .delivery-card .d-label{font-weight:800; font-size:14px; margin-bottom:3px;}
+  .delivery-card .d-price{font-family:'Changa'; font-weight:700; color:var(--red); font-size:15px;}
+  .delivery-card .d-price.muted{color:#a89a8c;}
+  .order-summary{margin-top:4px; background:var(--paper); border-radius:14px; padding:14px 16px; font-size:14px;}
+  .order-summary .row{display:flex; justify-content:space-between; padding:5px 0;}
+  .order-summary .row.total{border-top:1.5px dashed var(--gold-deep); margin-top:5px; padding-top:10px; font-weight:800; font-size:16px; color:var(--red);}
+  .btn-submit{
+    width:100%; display:flex; justify-content:center; align-items:center; gap:9px;
+    margin-top:18px; padding:15px; border:none; border-radius:100px; cursor:pointer;
+    background:var(--green); color:var(--green-deep); font-family:'Tajawal'; font-weight:800; font-size:16px;
+    box-shadow:0 10px 24px rgba(37,211,102,.35);
+  }
+  .btn-submit svg{width:21px; height:21px;}
+  .form-hint{font-size:12px; color:#8a7d73; text-align:center; margin-top:10px;}
+
+  .btn-submit:disabled{opacity:.7; cursor:default;}
+
+  /* ---------- THANK YOU ---------- */
+  .thanks-box{
+    max-width:560px; margin:0 auto; background:#fff; border-radius:20px;
+    box-shadow:0 20px 50px rgba(46,21,48,.15); padding:38px 28px; text-align:center;
+  }
+  .thanks-icon{
+    width:64px; height:64px; margin:0 auto 16px; border-radius:50%;
+    background:var(--green); color:var(--green-deep);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .thanks-icon svg{width:32px; height:32px;}
+  .thanks-box h3{font-size:22px; font-weight:800; margin-bottom:8px;}
+  .thanks-box p{color:#5a4d44; font-size:15px; max-width:400px; margin:0 auto;}
+  .thanks-summary{
+    margin-top:20px; background:var(--paper); border-radius:14px; padding:16px 18px;
+    text-align:right; font-size:14px;
+  }
+  .thanks-summary .row{display:flex; justify-content:space-between; padding:5px 0;}
+  .thanks-summary .row.total{border-top:1.5px dashed var(--gold-deep); margin-top:5px; padding-top:10px; font-weight:800; color:var(--red);}
+
+
+
+</style>
+</head>
+<body>
+
+  <div class="poster">
+    <img src="poster.png" alt="لعبة Jenga — 54 قطعة، خشب طبيعي متين، 2850 دج">
+  </div>
+
+  <section class="order-section" id="order-form">
+    <div class="section-head">
+      <h2>عمر الفورم، ولد راح تجيك اللعبة</h2>
+      <p>عمر معلوماتك، اختار طريقة التوصيل، وابعث الطلب — نتصلو بيك للتأكيد.</p>
+    </div>
+
+    <div class="order-box" id="formBox">
+      <div class="order-box-head">
+        <h3>🧱 طلب لعبة Jenga</h3>
+        <p>2850 دج + مصاريف التوصيل حسب ولايتك</p>
+      </div>
+
+      <form class="order-form" id="orderForm">
+        <div class="field">
+          <label for="fullname">الاسم الكامل</label>
+          <input type="text" id="fullname" name="fullname" placeholder="مثال: أحمد بن علي" required>
+        </div>
+        <div class="field">
+          <label for="phone">رقم الهاتف</label>
+          <input type="tel" id="phone" name="phone" placeholder="05 xx xx xx xx" required>
+        </div>
+        <div class="field">
+          <label for="wilaya">الولاية</label>
+          <select id="wilaya" name="wilaya" required>
+            <option value="" disabled selected>اختر ولايتك</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>طريقة التوصيل</label>
+          <div class="delivery-options">
+            <label class="delivery-card active" id="cardDomicile">
+              <input type="radio" name="delivery" value="domicile" checked>
+              <div class="d-label">للمنزل</div>
+              <div class="d-price muted" id="priceDomicile">اختر الولاية</div>
+            </label>
+            <label class="delivery-card" id="cardStopdesk">
+              <input type="radio" name="delivery" value="stopdesk">
+              <div class="d-label">للمكتب (Stopdesk)</div>
+              <div class="d-price muted" id="priceStopdesk">اختر الولاية</div>
+            </label>
+          </div>
+        </div>
+
+        <div class="order-summary">
+          <div class="row"><span>ثمن اللعبة</span><span>2850 دج</span></div>
+          <div class="row"><span>مصاريف التوصيل</span><span id="sumDelivery">—</span></div>
+          <div class="row total"><span>المجموع</span><span id="sumTotal">—</span></div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>تأكيد الطلب</span>
+        </button>
+        <p class="form-hint">نتصلو بيك من غير ما تخلص حتى دينار دابا.</p>
+      </form>
+    </div>
+
+    <div class="thanks-box" id="thanksBox" style="display:none;">
+      <div class="thanks-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h3>تسلم! طلبك وصلنا 🎉</h3>
+      <p>سجلنا طلبك بنجاح. فريقنا راح يتصل بيك قريب على الرقم اللي عطيتنا باش نأكدو التوصيل.</p>
+      <div class="thanks-summary" id="thanksSummary"></div>
+    </div>
+  </section>
+
+<script>
+  // [الرمز الرسمي, الاسم بالعربية, سعر التوصيل للمنزل, سعر التوصيل للمكتب]
+  const WILAYAS = [
+  ["01","أدرار",1100,750],
+  ["02","الشلف",680,400],
+  ["03","الأغواط",800,500],
+  ["04","أم البواقي",680,400],
+  ["05","باتنة",700,400],
+  ["06","بجاية",700,400],
+  ["07","بسكرة",800,500],
+  ["08","بشار",1000,700],
+  ["09","البليدة",500,350],
+  ["10","البويرة",600,400],
+  ["11","تمنراست",1500,1050],
+  ["12","تبسة",720,450],
+  ["13","تلمسان",700,400],
+  ["14","تيارت",700,400],
+  ["15","تيزي وزو",600,400],
+  ["16","الجزائر",500,300],
+  ["17","الجلفة",800,500],
+  ["18","جيجل",700,400],
+  ["19","سطيف",680,400],
+  ["20","سعيدة",730,450],
+  ["21","سكيكدة",700,400],
+  ["22","سيدي بلعباس",700,400],
+  ["23","عنابة",700,450],
+  ["24","قالمة",700,400],
+  ["25","قسنطينة",680,400],
+  ["26","المدية",600,400],
+  ["27","مستغانم",700,400],
+  ["28","المسيلة",700,400],
+  ["29","معسكر",700,400],
+  ["30","ورقلة",900,550],
+  ["31","وهران",580,400],
+  ["32","البيض",970,700],
+  ["33","إليزي",1500,1050],
+  ["34","برج بوعريريج",680,400],
+  ["35","بومرداس",400,250],
+  ["36","الطارف",730,450],
+  ["37","تندوف",1100,750],
+  ["38","تيسمسيلت",700,400],
+  ["39","الوادي",900,550],
+  ["40","خنشلة",700,400],
+  ["41","سوق أهراس",730,450],
+  ["42","تيبازة",530,350],
+  ["43","ميلة",700,400],
+  ["44","عين الدفلى",700,400],
+  ["45","النعامة",930,550],
+  ["46","عين تموشنت",700,400],
+  ["47","غرداية",850,500],
+  ["48","غليزان",700,400],
+  ["49","تيميمون",1100,750],
+  ["51","أولاد جلال",800,500],
+  ["52","بني عباس",1000,750],
+  ["53","عين صالح",1400,950],
+  ["55","تقرت",930,550],
+  ["56","جانت",2100,1500],
+  ["57","المغير",930,550],
+  ["58","المنيعة",850,500]
+];
+
+  const PRODUCT_PRICE = 2850;
+  // ضع هنا رابط الـ Google Apps Script Web App تاعك (خطوات الربط شرحتها قبل).
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbzvq5pq3avCf8RpSWXmddDkMvOybT0vizCGbGEeuCGvZzVfIxw_6iq14LU6mJYkAO2SFg/exec";
+
+  const wilayaSelect = document.getElementById('wilaya');
+  WILAYAS.forEach((w, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = w[0] + " - " + w[1];
+    wilayaSelect.appendChild(opt);
+  });
+
+  const cardDomicile = document.getElementById('cardDomicile');
+  const cardStopdesk = document.getElementById('cardStopdesk');
+  const priceDomicileEl = document.getElementById('priceDomicile');
+  const priceStopdeskEl = document.getElementById('priceStopdesk');
+  const sumDeliveryEl = document.getElementById('sumDelivery');
+  const sumTotalEl = document.getElementById('sumTotal');
+
+  function fmt(n){ return n.toLocaleString('en-US') + ' دج'; }
+
+  function currentDeliveryPrice(){
+    const idx = wilayaSelect.value;
+    if(idx === "") return null;
+    const w = WILAYAS[idx];
+    const type = document.querySelector('input[name="delivery"]:checked').value;
+    return type === 'domicile' ? w[2] : w[3];
+  }
+
+  function updateActiveCards(){
+    const type = document.querySelector('input[name="delivery"]:checked').value;
+    cardDomicile.classList.toggle('active', type === 'domicile');
+    cardStopdesk.classList.toggle('active', type === 'stopdesk');
+  }
+
+  function updatePrices(){
+    const idx = wilayaSelect.value;
+    if(idx === ""){
+      priceDomicileEl.textContent = 'اختر الولاية';
+      priceStopdeskEl.textContent = 'اختر الولاية';
+      priceDomicileEl.classList.add('muted');
+      priceStopdeskEl.classList.add('muted');
+      sumDeliveryEl.textContent = '—';
+      sumTotalEl.textContent = '—';
+      return;
+    }
+    const w = WILAYAS[idx];
+    priceDomicileEl.textContent = fmt(w[2]);
+    priceStopdeskEl.textContent = fmt(w[3]);
+    priceDomicileEl.classList.remove('muted');
+    priceStopdeskEl.classList.remove('muted');
+
+    const deliveryPrice = currentDeliveryPrice();
+    sumDeliveryEl.textContent = fmt(deliveryPrice);
+    sumTotalEl.textContent = fmt(PRODUCT_PRICE + deliveryPrice);
+  }
+
+  wilayaSelect.addEventListener('change', updatePrices);
+  document.querySelectorAll('input[name="delivery"]').forEach(r => {
+    r.addEventListener('change', () => { updateActiveCards(); updatePrices(); });
+  });
+
+  document.getElementById('orderForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!this.checkValidity()){
+      this.reportValidity();
+      return;
+    }
+    const name = document.getElementById('fullname').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const idx = wilayaSelect.value;
+    const wilayaName = WILAYAS[idx][1];
+    const deliveryType = document.querySelector('input[name="delivery"]:checked').value;
+    const deliveryLabel = deliveryType === 'domicile' ? 'للمنزل' : 'للمكتب (Stopdesk)';
+    const deliveryPrice = currentDeliveryPrice();
+    const total = PRODUCT_PRICE + deliveryPrice;
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.querySelector('span').textContent = 'جاري الإرسال...';
+
+    const data = new FormData();
+    data.append('name', name);
+    data.append('phone', phone);
+    data.append('wilaya', wilayaName);
+    data.append('delivery', deliveryLabel);
+    data.append('deliveryPrice', deliveryPrice);
+    data.append('total', total);
+    data.append('product', 'Jenga');
+    data.append('price', PRODUCT_PRICE);
+
+    const showThanks = () => {
+      // ---- Facebook Pixel: نبعث حدث الطلب لحظة التأكيد ----
+      if(typeof fbq === 'function'){
+        fbq('track', 'Purchase', {value: total, currency: 'DZD'});
+      }
+      document.getElementById('formBox').style.display = 'none';
+      document.getElementById('thanksSummary').innerHTML = `
+        <div class="row"><span>الاسم</span><span>${name}</span></div>
+        <div class="row"><span>الولاية</span><span>${wilayaName}</span></div>
+        <div class="row"><span>التوصيل</span><span>${deliveryLabel}</span></div>
+        <div class="row total"><span>المجموع</span><span>${fmt(total)}</span></div>
+      `;
+      document.getElementById('thanksBox').style.display = 'block';
+      document.getElementById('thanksBox').scrollIntoView({behavior:'smooth', block:'start'});
+    };
+
+    if(GOOGLE_SHEET_URL){
+      // نبعث فالخلفية بلا ما نستنى الرد، ونبين صفحة الشكر توا
+      fetch(GOOGLE_SHEET_URL, { method:'POST', mode:'no-cors', body:data }).catch(()=>{});
+    }
+    showThanks();
+  });
+</script>
+
+</body>
+</html>
